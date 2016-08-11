@@ -8,7 +8,6 @@ function save() {
 }
 
 function load() {
-    alert(chrome);
     chrome.storage.sync.get(properties, function(items) {
         document.querySelector('#username').value = items.username || 'anonymous';
     })

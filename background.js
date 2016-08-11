@@ -1,7 +1,7 @@
 var WEBHOOK_URL = 'https://hooks.slack.com/services/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';
 
 function sendLinkToTouchDevWeekly(tab, username) {
-	var text = mountText(tab, username);
+	var text = username + ' recomendou: \n*' + tab.title + '* \n' + tab.url;
 	$.ajax({
 		data: 'payload=' + JSON.stringify({
 			"text": text
@@ -11,10 +11,19 @@ function sendLinkToTouchDevWeekly(tab, username) {
 		type: 'POST',
 		url: WEBHOOK_URL,
 	});
+
+	showNotification('Sua recomendação foi enviada!', tab.title);
 }
 
-function mountText(tab, username) {
-	return username + ' recomendou: \n*' + tab.title + '* \n' + tab.url;
+function showNotification(title, message){
+	var notificationOptions = {
+		type: "basic",
+  		title: title,
+  		message: message,
+  		iconUrl: "icon.png"
+	};
+
+	chrome.notifications.create('notification', notificationOptions);
 }
 
 function recoverUsernameAndSendLink(tab, callback) {
@@ -23,6 +32,8 @@ function recoverUsernameAndSendLink(tab, callback) {
 		callback(tab, username);
     })
 }
+
+// ========================================================== //
 
 chrome.browserAction.onClicked.addListener(function(tab){
 	recoverUsernameAndSendLink(tab, function(tab, username) {
