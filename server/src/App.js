@@ -3,7 +3,7 @@ import logo from './logo.png';
 import $ from 'jquery';
 import './App.css';
 
-const API_URL = 'https://tdevweekly-api.herokuapp.com/';
+const API_URL = 'https://tdevweekly-api.herokuapp.com';
 
 class App extends Component {
 
@@ -17,7 +17,7 @@ class App extends Component {
 
   componentWillMount() {
       $.ajax({
-          url: `${API_URL}/url`,
+          url: `${API_URL}/all`,
           method: 'GET',
           dataType: 'json',
           success: (data) => {
