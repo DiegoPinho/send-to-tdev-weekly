@@ -1,6 +1,7 @@
 function sendContextRecomendation(info, tab) {
     recoverUsernameAndSendLink(tab, function(tab, username) {
         sendLinkToTouchDevWeekly(tab, username);
+		saveLinkOnTouchDevWeekly(tab, username);
     });
 }
 
