@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.png';
 import $ from 'jquery';
 import './App.css';
+import ExportButton from './ExportButton';
+
 
 const API_URL = 'https://tdevweekly-api.herokuapp.com';
 
@@ -35,8 +37,9 @@ class App extends Component {
               <tr>
                   <th>Username</th>
                   <th>Title</th>
-                  <th>Url</th>
+                  <th>Link</th>
                   <th>Date</th>
+                  <th>Export</th>
               </tr>
           </thead>
       );
@@ -46,8 +49,9 @@ class App extends Component {
               <tr key={link.date}>
                   <th>{link.username}</th>
                   <th>{link.title}</th>
-                  <th><a href={link.url} target="_blank">{link.url}</a></th>
+                  <th><a href={link.url} target="_blank">link</a></th>
                   <th>{link.date}</th>
+                  <th><ExportButton url={link.url} /></th>
               </tr>
           )
       });
