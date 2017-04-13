@@ -55,8 +55,17 @@ app.post('/save', function(request, response) {
             response.sendStatus(200);
         }
     })
+});
 
-})
+app.delete('/delete/:linkId', function(request, response) {
+    var linkId = request.params.linkId;
+    Link.findByIdAndRemove(linkId, function(err, todo) {
+        if(err) console.log('error');
+        else {
+            response.sendStatus(200);
+        }
+    });
+});
 
 app.listen(port);
 console.log('Server is up and listening on port: ' + port);
