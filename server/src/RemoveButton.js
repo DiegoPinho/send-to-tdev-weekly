@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import configs from './config/config';
 
 class RemoveButton extends Component {
 
@@ -9,8 +10,9 @@ class RemoveButton extends Component {
 	}
 
 	removeLink() {
+		let API_URL = configs.API_URL;
 		$.ajax({
-			url: 'http://localhost:8080/delete/' + this.props.linkId,
+			url: `${API_URL}/delete/${this.props.linkId}`,
 			type: 'DELETE',
 			success: result => {
 				alert('Link removido com sucesso!');
