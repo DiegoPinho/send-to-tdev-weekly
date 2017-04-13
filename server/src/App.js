@@ -55,7 +55,7 @@ class App extends Component {
       const lines = links.map(link => {
           return (
               <tr key={link.date}>
-                  <th><RemoveButton linkId={link._id} callback={this.loadContent()} /></th>
+                  <th><RemoveButton linkId={link._id} callback={this.loadContent} /></th>
                   <th>{link.username}</th>
                   <th>{link.title}</th>
                   <th><a href={link.url} target="_blank">link</a></th>
