@@ -1,7 +1,7 @@
 var WEBHOOK_URL_DEV = 'https://hooks.slack.com/services/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'
 var WEBHOOK_URL = 'https://hooks.slack.com/services/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';
 
-var API_URL = 'https://tdevweekly-api.herokuapp.com';
+var API_URL = 'https://tdevweekly.herokuapp.com';
 
 // WEBHOOK_URL = WEBHOOK_URL_DEV;
 
