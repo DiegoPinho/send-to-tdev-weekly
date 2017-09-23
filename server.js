@@ -8,15 +8,20 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.use(function (req, res, next) {
+// Express only serves static assets in production
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+}
+
+app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-access-token');
 
     next();
 });
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3001;
 
 var configDatabase = require('./config/database.js');
 mongoose.connect(configDatabase.url);

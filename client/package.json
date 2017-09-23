@@ -1,15 +1,22 @@
 {
   "name": "tdevweekly-server",
-  "version": "1.1.2",
-  "private": true,
-  "description": "send-to-tdev-weekly extension server",
+  "version": "1.2.2",
+  "description": "send-to-tdev-weekly",
+  "proxy": "http://localhost:3001/",
+  "author": {
+    "name": "Diego Martins de Pinho",
+    "email": "diegomartinsdepinho@msn.com",
+    "url": "http://www.diegopinho.com.br"
+  },
   "devDependencies": {
     "react-scripts": "0.7.0"
   },
   "dependencies": {
     "jquery": "^3.1.1",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "superagent": "^3.6.0",
+    "superagent-promise": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

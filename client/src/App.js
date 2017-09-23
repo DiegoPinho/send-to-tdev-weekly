@@ -20,9 +20,8 @@ class App extends Component {
   }
 
   loadContent() {
-      let API_URL = configs.API_URL;
       $.ajax({
-          url: `${API_URL}/all`,
+          url: `/all`,
           method: 'GET',
           dataType: 'json',
           success: (data) => {
