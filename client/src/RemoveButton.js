@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import configs from './config/config';
+import removeButton from './remove.png';
 
 class RemoveButton extends Component {
 
@@ -27,7 +28,7 @@ class RemoveButton extends Component {
 					alt="Remover" title="Remover"
 					width="25" height="25" 
 					style={{"cursor": "pointer"}} 
-					src="http://www.clker.com/cliparts/L/b/2/s/h/1/remove-button-md.png" 
+					src={removeButton}
 				/>
 			</div>
 		);
