@@ -10,9 +10,8 @@ class RemoveButton extends Component {
 	}
 
 	removeLink() {
-		let API_URL = configs.API_URL;
 		$.ajax({
-			url: `${API_URL}/delete/${this.props.linkId}`,
+			url: `/delete/${this.props.linkId}`,
 			type: 'DELETE',
 			success: result => {
 				alert('Link removido com sucesso!');
