@@ -1,7 +1,8 @@
 {
   "main.css": "static/css/main.5edea0b8.css",
   "main.css.map": "static/css/main.5edea0b8.css.map",
-  "main.js": "static/js/main.0bbb0ab4.js",
-  "main.js.map": "static/js/main.0bbb0ab4.js.map",
-  "static\\media\\logo.png": "static/media/logo.2de44258.png"
+  "main.js": "static/js/main.ef040c97.js",
+  "main.js.map": "static/js/main.ef040c97.js.map",
+  "static\\media\\logo.png": "static/media/logo.2de44258.png",
+  "static\\media\\remove.png": "static/media/remove.c7f4bd72.png"
 }
